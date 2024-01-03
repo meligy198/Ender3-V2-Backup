@@ -32,9 +32,13 @@ fi
 
 # Git commands
 git init
-git filter-branch --force --index-filter \
-  'git rm -r --cached --ignore-unmatch "$parent_path"/.env' \
-  --prune-empty --tag-name-filter cat -- --all
+git config --global user.email "ahmedomar98@gmail.com"
+git config --global user.name "Ahmed Elmeligy"
+git stash
+git stash apply
+#git filter-branch --force --index-filter \
+# 'git rm -r --cached --ignore-unmatch "$parent_path"/.env' \
+#  --prune-empty --tag-name-filter cat -- --all
 #git rm -rf --cached "$parent_path"/.env
 git add "$parent_path"
 git commit -m "$commit_message"
